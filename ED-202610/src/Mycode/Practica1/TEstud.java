@@ -2,34 +2,32 @@ package Mycode.Practica1;
 
 
 
+
+
 import java.util.ArrayList;
 
+
 public class TEstud {
-    private String name;
-    private int age;
-    private ArrayList<Integer>notas;
-    private float promedio=0;
-    public TEstud(String name, int age){
+    String name;
+    int age;
+    ArrayList<Integer>notas = new ArrayList<>(5);
+
+    public TEstud(String name, int age, ArrayList<Integer> notas){
         this.name=name;
         this.age=age;
+        this.notas=notas;
     }
-
-    String getName(){
-        return name;
-    }
-    int getAge(){
-        return age;
+    public TEstud(){
 
     }
-    void adicionarNota(int nota){
-        notas.add(nota);
+
+    public ArrayList<Integer> getNotas(){
+        return notas;
 
     }
-    float getPromedio(){
-        int sum=0;
-        for (int i=0;i<notas.size();i++) sum += notas.get(i);
-        promedio=sum/notas.size();
-        return promedio;
-    }
+
+
+
+
 
 }
