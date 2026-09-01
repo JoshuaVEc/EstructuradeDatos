@@ -26,8 +26,8 @@ public class Practice01_TEstud {
 
     }
     public int getPromedio(){
-        int suma=0;
-        int promedio=0;
+        int suma;
+        int promedio;
         suma= notas.get(0)+
                 notas.get(1)+
                 notas.get(2)+

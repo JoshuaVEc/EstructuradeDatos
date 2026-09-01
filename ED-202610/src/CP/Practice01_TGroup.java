@@ -31,13 +31,21 @@ public class Practice01_TGroup {
                 promedios_estudiantes.addFirst(actual);
             }
 
-            actual = grupo_cada_promedio.removeFirst();
-
+            grupo_cada_promedio.removeFirst();
+            actual = grupo_cada_promedio.first();
 
     }
     }
     public String getBestStudent(){
-        return promedios_estudiantes.first().getName();
+        SinglyLinkedList<Practice01_TEstud> grupo_verificar_repetido = promedios_estudiantes;
+       Practice01_TEstud primero= grupo_verificar_repetido.first();
+       grupo_verificar_repetido.removeFirst();
+       if(primero.getPromedio() == grupo_verificar_repetido.first().getPromedio()){
+           return "son dos " + primero.getName() + " y " + grupo_verificar_repetido.first().getName();
+       } else  {
+           return primero.getName();
+
+       }
     }
 
 
