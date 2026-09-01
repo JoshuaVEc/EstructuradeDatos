@@ -1,13 +1,14 @@
 package CP;
 
 
-import TDAs.SinglyLinkedList;
-
-
 public class Practice01_TController {
 Practice01_TGroup grupo ;
-    public void añadirEstudiantes(Practice01_TEstud estudiante){
-        grupo.getEstudiantes().addLast(estudiante);
+
+    public Practice01_TController(){
+        this.grupo =new Practice01_TGroup();
+    }
+    public void anadirEstudiantes(Practice01_TEstud estudiante){
+        grupo.addStudent(estudiante);
 
     }
 
@@ -15,4 +16,7 @@ Practice01_TGroup grupo ;
         return grupo.getBestStudent();
     }
 
+    public void imprimirPromedioEstudiante(){
+        grupo.imprimirPromedioCadaEstudiante();
+    }
 }

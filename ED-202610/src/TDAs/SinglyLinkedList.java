@@ -25,6 +25,7 @@ public class SinglyLinkedList<E> {
             next = n;
         }
     }
+
     private Node<E> head = null;
     private Node<E> tail = null;
     private int size = 0;
