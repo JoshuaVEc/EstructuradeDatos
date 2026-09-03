@@ -23,7 +23,7 @@ public class EI02_Player {
     public int getTotalKills(){
         return totalKills;
     }
-    public void setTotalKills(int kills){
+    public void addTotalKills(int kills){
         totalKills+=kills;
     }
     public void addGameRecords(EI02_Game game){
@@ -32,5 +32,6 @@ public class EI02_Player {
     public EI02_Game seeLastGame(){
         return games_records.top();
     }
+
 
 }
