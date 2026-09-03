@@ -1,34 +1,31 @@
 package EI;
 
+import TDAs.LinkedStack;
+
 public class EI02_Game {
-    Boolean victory;
-    int kills;
-    float timeSeconds;
+    String  victor;
+
+    double timeSeconds;
 
     public EI02_Game() {
     }
 
-    public Boolean getVictory() {
-        return victory;
+    public String getVictor() {
+        return victor;
     }
 
-    public void setVictory(Boolean victory) {
-        this.victory = victory;
+    public void setVictory(String victor) {
+        this.victor = victor;
     }
 
-    public float getTimeSeconds() {
+    public double getTimeSeconds() {
         return timeSeconds;
     }
 
-    public int getKills() {
-        return kills;
-    }
 
-    public void setKills(int kills) {
-        this.kills = kills;
-    }
 
-    public void setTimeSeconds(float timeSeconds) {
+    public void setTimeSeconds(double timeSeconds) {
         this.timeSeconds = timeSeconds;
     }
+
 }

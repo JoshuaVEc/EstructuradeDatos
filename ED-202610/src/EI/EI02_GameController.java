@@ -1,11 +1,12 @@
 package EI;
 
 import TDAs.LinkedQueue;
+import TDAs.LinkedStack;
 
 
 public class EI02_GameController {
     LinkedQueue<EI02_Player> players_in_Queue = new LinkedQueue<>();
-
+    LinkedStack<EI02_Game> games_records = new LinkedStack<>();
 
     public EI02_GameController() {}
 
@@ -28,10 +29,19 @@ public class EI02_GameController {
     public EI02_Player getFirstPlayer(){
         return players_in_Queue.first();
     }
-    public void StartGame(boolean victory, double time){
-        EI02_Game game = new EI02_Game();
+
+
+    public LinkedStack<EI02_Game> getGames_records() {
+        return games_records;
     }
 
+
+    public void addGameRecords(EI02_Game game){
+        games_records.push(game);
+    }
+    public EI02_Game seeLastGame(){
+        return games_records.top();
+    }
 
 
 
