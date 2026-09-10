@@ -4,7 +4,7 @@ import TDAs.DoublyLinkedList;
 import TDAs.Node;
 
 public class EI03_Inventary {
-    int size=8;
+
     DoublyLinkedList<EI03_Item>  list=new DoublyLinkedList<>();
     public EI03_Inventary(){}
 
@@ -12,8 +12,8 @@ public class EI03_Inventary {
         return list;
     }
 
-    public EI03_Item getNext(){
-        EI03_Item temp1 =list.first();
-
+    public int getSize(){
+        return list.size();
     }
+
 }
