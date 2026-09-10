@@ -1,5 +1,7 @@
 package EI;
 
+import TDAs.DoublyLinkedList;
+
 public class EI03_InventaryController {
     EI03_Inventary inventary=new EI03_Inventary();
     EI03_InventaryController(){}
@@ -14,6 +16,9 @@ public class EI03_InventaryController {
         return inventary.getList().last();
     }
     public EI03_Item getNextItem(){
-        return inventary.getList().
+       while(true){
+           return inventary.getList().
+       }
+
     }
 }

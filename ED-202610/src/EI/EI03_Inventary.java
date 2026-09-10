@@ -1,6 +1,7 @@
 package EI;
 
 import TDAs.DoublyLinkedList;
+import TDAs.Node;
 
 public class EI03_Inventary {
     int size=8;
@@ -9,5 +10,10 @@ public class EI03_Inventary {
 
     public DoublyLinkedList<EI03_Item> getList(){
         return list;
+    }
+
+    public EI03_Item getNext(){
+        EI03_Item temp1 =list.first();
+
     }
 }
