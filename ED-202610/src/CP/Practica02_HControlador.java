@@ -2,7 +2,6 @@ package CP;
 
 import TDAs.DoublyLinkedList;
 import TDAs.LinkedQueue;
-import TDAs.SinglyLinkedList;
 
 public class Practica02_HControlador {
 
@@ -75,7 +74,7 @@ public class Practica02_HControlador {
     return search;
     }
 
-    public  DoublyLinkedList<Practica02_HReservacion> getThisHotelReservation(String nameHotel) {
+    public DoublyLinkedList<Practica02_HReservacion> getThisHotelReservation(String nameHotel) {
         DoublyLinkedList<Practica02_HReservacion> copyReservacion = new DoublyLinkedList<>();
         DoublyLinkedList<Practica02_HReservacion> reservationThisHotel = new DoublyLinkedList<>();
         Practica02_HReservacion reservation = null;

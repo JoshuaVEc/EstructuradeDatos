@@ -1,6 +1,5 @@
 package EI;
 
-import TDAs.DoublyLinkedList;
 import java.util.Scanner;
 
 public class EI03_InventaryMain {

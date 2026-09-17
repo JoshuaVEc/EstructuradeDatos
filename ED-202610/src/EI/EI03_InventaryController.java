@@ -1,7 +1,5 @@
 package EI;
 
-import TDAs.DoublyLinkedList;
-
 public class EI03_InventaryController {
     private EI03_Inventary inventary = new EI03_Inventary();
     private EI03_Inventary backupInventary = new EI03_Inventary();
