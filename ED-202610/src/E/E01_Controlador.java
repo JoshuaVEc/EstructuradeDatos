@@ -41,10 +41,10 @@ public class E01_Controlador {
             } else{
                 valorActualSubasta=Oferta;
                 double capital = persona.getCapital();
-                double nuevoCapital = capital-Oferta;
+             double nuevoCapital = capital-Oferta;
                 persona.setCapital(nuevoCapital);
                 personas.dequeue();
-                if(nuevoCapital > 0){
+                if(nuevoCapital > valorActualSubasta){
                     personas.enqueue(persona);
                 }
 
