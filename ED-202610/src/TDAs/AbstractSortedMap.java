@@ -32,4 +32,11 @@ public abstract class AbstractSortedMap<K,V> extends AbstractMap<K,V> {
     protected int compare(K a, K b) {
         return comp.compare(a, b);
     }
+    protected boolean checkKey(K key) throws IllegalArgumentException {
+        try {
+            return (compare(key, key) == 0); // Verifica si la clave puede compararse consigo misma
+        } catch (ClassCastException e) {
+            throw new IllegalArgumentException("Incompatible key");
+        }
+    }
 }
