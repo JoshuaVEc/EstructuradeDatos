@@ -1,4 +1,4 @@
-package Mycode;
+package CP;
 
 public class Reserva {
     Huesped huesped = new Huesped();

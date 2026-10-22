@@ -1,4 +1,4 @@
-package Mycode;
+package CP;
 
 import TDAs.TreeMap;
 import TDAs.Entry;
@@ -7,25 +7,21 @@ import java.util.List;
 
 public class BalanceadorArbol {
 
-    /**
-     * Método externo que recibe un TreeMap desbalanceado y retorna una nueva
-     * instancia de TreeMap con las mismas entradas pero con estructura balanceada.
-     */
+
     public static <K, V> TreeMap<K, V> balancear(TreeMap<K, V> arbolOriginal) {
         if (arbolOriginal == null || arbolOriginal.isEmpty()) {
             return arbolOriginal;
         }
 
-        // 1. Extrae todas las entradas usando el recorrido in-order que provee entrySet()
+
         List<Entry<K, V>> listaOrdenada = new ArrayList<>();
         for (Entry<K, V> entrada : arbolOriginal.entrySet()) {
             listaOrdenada.add(entrada);
         }
 
-        // 2. Crea un nuevo TreeMap limpio
+
         TreeMap<K, V> arbolBalanceado = new TreeMap<>();
 
-        // 3. Reconstruye el nuevo árbol insertando sucesivamente los elementos centrales
         construirBalanceadoRecursivo(arbolBalanceado, listaOrdenada, 0, listaOrdenada.size() - 1);
 
         return arbolBalanceado;

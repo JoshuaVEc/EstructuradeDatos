@@ -1,4 +1,4 @@
-package Mycode;
+package CP;
 
 public class LecturaTelemetria {
     String codigo_censor;

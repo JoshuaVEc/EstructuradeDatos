@@ -1,10 +1,10 @@
-package Mycode;
+package CP;
 import TDAs.TreeMap;
 import TDAs.Entry;
 
 public class ControladorTelemetria {
 
-    TreeMap<Integer,LecturaTelemetria> lecturas = new TreeMap<>();
+    TreeMap<Integer, LecturaTelemetria> lecturas = new TreeMap<>();
 
     public LecturaTelemetria registrarLectura(int kilometraje, LecturaTelemetria lectura){
         return lecturas.put(kilometraje,lectura);
