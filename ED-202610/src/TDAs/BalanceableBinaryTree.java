@@ -1,7 +1,7 @@
 package TDAs;
 
 /** A specialized version of LinkedBinaryTree with support for balancing. */
- class BalanceableBinaryTree<K,V> extends LinkedBinaryTree<Entry<K,V>> {
+ public class BalanceableBinaryTree<K,V> extends LinkedBinaryTree<Entry<K,V>> {
 
     //---------------- nested BSTNode class ----------------
     // this extends the inherited LinkedBinaryTree.Node class

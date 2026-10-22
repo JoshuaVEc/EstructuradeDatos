@@ -3,13 +3,13 @@ package CP;
 import TDAs.DoublyLinkedList;
 import TDAs.LinkedQueue;
 
-public class Practica02_HControlador {
+public class Practice02_HControlador {
 
-    LinkedQueue<Practica02_HSolicitud> listVip = new LinkedQueue<>();
-    LinkedQueue<Practica02_HSolicitud> listNormal = new LinkedQueue<>();
+    LinkedQueue<Practice02_HSolicitud> listVip = new LinkedQueue<>();
+    LinkedQueue<Practice02_HSolicitud> listNormal = new LinkedQueue<>();
 
-    DoublyLinkedList<Practica02_HReservacion> reservations = new DoublyLinkedList<>();
-    public void addSolicitud(Practica02_HSolicitud solicitud){
+    DoublyLinkedList<Practice02_HReservacion> reservations = new DoublyLinkedList<>();
+    public void addSolicitud(Practice02_HSolicitud solicitud){
         if(solicitud == null || solicitud.getClientType() ==null){
             return;
         }
@@ -24,27 +24,27 @@ public class Practica02_HControlador {
     public void makeReservations(){
         int roomNumberCounter = 100;
         while(!listVip.isEmpty()){
-            Practica02_HSolicitud solicitudTempo = listVip.dequeue();
-            Practica02_HReservacion reservacion = new Practica02_HReservacion(solicitudTempo.getCode(),solicitudTempo.getClientName(),solicitudTempo.gethotelName(), roomNumberCounter++);
+            Practice02_HSolicitud solicitudTempo = listVip.dequeue();
+            Practice02_HReservacion reservacion = new Practice02_HReservacion(solicitudTempo.getCode(),solicitudTempo.getClientName(),solicitudTempo.gethotelName(), roomNumberCounter++);
             reservations.addLast(reservacion);
 
 
         }
         while(!listNormal.isEmpty()){
-            Practica02_HSolicitud solicitudTempo = listNormal.dequeue();
-            Practica02_HReservacion reservacion = new Practica02_HReservacion(solicitudTempo.getCode(),solicitudTempo.getClientName(),solicitudTempo.gethotelName(), roomNumberCounter++);
+            Practice02_HSolicitud solicitudTempo = listNormal.dequeue();
+            Practice02_HReservacion reservacion = new Practice02_HReservacion(solicitudTempo.getCode(),solicitudTempo.getClientName(),solicitudTempo.gethotelName(), roomNumberCounter++);
             reservations.addLast(reservacion);
 
         }
     }
-    public DoublyLinkedList<Practica02_HReservacion> getReservations(){
+    public DoublyLinkedList<Practice02_HReservacion> getReservations(){
         return reservations;
     }
 
 
-    public Practica02_HSolicitud getSolicitud(Practica02_HSolicitud solicitud) {
-        LinkedQueue<Practica02_HSolicitud> targetQueue = new LinkedQueue<>();
-        Practica02_HSolicitud search = null;
+    public Practice02_HSolicitud getSolicitud(Practice02_HSolicitud solicitud) {
+        LinkedQueue<Practice02_HSolicitud> targetQueue = new LinkedQueue<>();
+        Practice02_HSolicitud search = null;
 
         if(solicitud == null || solicitud.getClientType() == null){
             return null;
@@ -58,9 +58,9 @@ public class Practica02_HControlador {
             return null;
         }
 
-        LinkedQueue<Practica02_HSolicitud> copyQueue= new LinkedQueue<>();
+        LinkedQueue<Practice02_HSolicitud> copyQueue= new LinkedQueue<>();
         while(!targetQueue.isEmpty()){
-            Practica02_HSolicitud actual = targetQueue.dequeue();
+            Practice02_HSolicitud actual = targetQueue.dequeue();
             if(actual.getCode()==solicitud.getCode()){
                 search= actual;
 
@@ -74,10 +74,10 @@ public class Practica02_HControlador {
     return search;
     }
 
-    public DoublyLinkedList<Practica02_HReservacion> getThisHotelReservation(String nameHotel) {
-        DoublyLinkedList<Practica02_HReservacion> copyReservacion = new DoublyLinkedList<>();
-        DoublyLinkedList<Practica02_HReservacion> reservationThisHotel = new DoublyLinkedList<>();
-        Practica02_HReservacion reservation = null;
+    public DoublyLinkedList<Practice02_HReservacion> getThisHotelReservation(String nameHotel) {
+        DoublyLinkedList<Practice02_HReservacion> copyReservacion = new DoublyLinkedList<>();
+        DoublyLinkedList<Practice02_HReservacion> reservationThisHotel = new DoublyLinkedList<>();
+        Practice02_HReservacion reservation = null;
         while(!reservations.isEmpty()){
                 reservation = reservations.removeFirst();
                 if(reservation.getHotelName().equalsIgnoreCase(nameHotel)){

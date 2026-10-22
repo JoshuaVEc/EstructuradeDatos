@@ -1,20 +1,20 @@
 package CP;
 
-public class Practica02_HSolicitud {
+public class Practice02_HSolicitud {
     int code;
     String clientName;
     String hotelName;
     String clientType;
     String timeOfStay;
 
-    public Practica02_HSolicitud(int code,String hotelName,String clientType, String timeOfStay) {
+    public Practice02_HSolicitud(int code, String hotelName, String clientType, String timeOfStay) {
         this.code = code;
         this.hotelName =hotelName;
         this.clientType=clientType;
         this.timeOfStay = timeOfStay;
     }
 
-    public Practica02_HSolicitud() {
+    public Practice02_HSolicitud() {
     }
 
     public int getCode() {

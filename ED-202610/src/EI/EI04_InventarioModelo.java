@@ -1,4 +1,7 @@
-package TDAs;
+package EI;
+
+import TDAs.LinkedBinaryTree;
+import TDAs.Position;
 
 public class EI04_InventarioModelo {
     private LinkedBinaryTree<EI04_Libro> arbol;

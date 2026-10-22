@@ -141,6 +141,49 @@ public class TreeMap<K,V> extends AbstractSortedMap<K,V> {
         }
         return null; // no such lesser key exists
     }
+    protected Position<Entry<K,V>> treeMin(Position<Entry<K,V>> p) {
+        Position<Entry<K,V>> walk = p;
+        while (tree.isInternal(walk))
+            walk = tree.left(walk);
+        return tree.parent(walk); // we want the parent of the leaf
+    }
+
+    /** Returns the entry having the least key (or null if map is empty). */
+    public Entry<K,V> firstEntry() {
+        if (isEmpty()) return null;
+        return treeMin(root()).getElement();
+    }
+
+    /** Returns the entry with least key greater than or equal to given key (if any). */
+    public Entry<K,V> ceilingEntry(K key) throws IllegalArgumentException {
+        checkKey(key);
+        Position<Entry<K,V>> p = treeSearch(root(), key);
+        if (tree.isInternal(p)) return p.getElement(); // exact match
+        while (!tree.isRoot(p)) {
+            if (p == tree.left(tree.parent(p)))
+                return tree.parent(p).getElement(); // parent has next greater key
+            else
+                p = tree.parent(p);
+        }
+        return null; // no such ceiling exists
+    }
+
+    /** Returns the entry with least key strictly greater than given key (if any). */
+    public Entry<K,V> higherEntry(K key) throws IllegalArgumentException {
+        checkKey(key);
+        Position<Entry<K,V>> p = treeSearch(root(), key);
+        if (tree.isInternal(p) && tree.isInternal(tree.right(p)))
+            return treeMin(tree.right(p)).getElement(); // this is the successor to p
+
+        // otherwise, we had failed search, or match with no right child
+        while (!tree.isRoot(p)) {
+            if (p == tree.left(tree.parent(p)))
+                return tree.parent(p).getElement(); // parent has next greater key
+            else
+                p = tree.parent(p);
+        }
+        return null; // no such greater key exists
+    }
 
     /** Returns an iterable collection of all key-value entries of the map. */
     public Iterable<Entry<K,V>> entrySet() {
